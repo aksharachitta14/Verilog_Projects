@@ -8,7 +8,7 @@ It supports multiple verification scenarios such as:
 - Front-door and back-door memory access using external files
 
 
-# Overview 
+## Overview 
 
 The **Memory module** is a parameterized synchronous design supporting configurable **WIDTH** and **DEPTH**.
 
@@ -17,7 +17,7 @@ The **Testbench** verifies the memory’s functionality using multiple automated
 This design is written using **standard Verilog syntax** and is compatible with common simulators.
 
 
-# Features 
+## Features 
 
 - ✅ Parameterized design (`WIDTH`, `DEPTH`)
 - ✅ Synchronous reset and clock operation
@@ -28,11 +28,11 @@ This design is written using **standard Verilog syntax** and is compatible with 
 - ✅ Compatible with Icarus Verilog, ModelSim, and QuestaSim
 
 
-# Memory Module Description 
+## Memory Module Description 
 
 **File:** `memory.v`
 
-# Parameters 
+### Parameters 
 
 | Parameter| Description                   | Default     |
 |----------|-------------------------------|-------------|
@@ -41,7 +41,7 @@ This design is written using **standard Verilog syntax** and is compatible with 
 | ADDR     | Address width (`log2(DEPTH)`) | Calculated  |
 
 
-# I/O Ports 
+### I/O Ports 
 
 | Port     | Direction| Description             |
 |----------|----------|-------------------------|
@@ -55,7 +55,7 @@ This design is written using **standard Verilog syntax** and is compatible with 
 | ready_o  | Output   | Memory ready signal     |
 
 
-# Testbench Description 
+## Testbench Description 
 
 **File:** `top.v`
 
@@ -64,7 +64,7 @@ The testbench verifies memory functionality using a set of **predefined and sele
 Testcases are selected dynamically using **plusargs**, enabling flexible simulation control.
 
 
-# Main Tasks 
+### Main Tasks 
 
 - `reset_mem()`  
   Initializes memory and control signals
@@ -81,9 +81,9 @@ Testcases are selected dynamically using **plusargs**, enabling flexible simulat
 - `mem_bd_read()`  
   Dumps memory content to `output.bin`
 
----
 
-# Supported Testcases 
+
+## Supported Testcases 
 
 | Testcase Name           | Description                                  |
 |-------------------------|----------------------------------------------|
@@ -102,15 +102,16 @@ Testcases are selected dynamically using **plusargs**, enabling flexible simulat
 | test_fd_wr_fd_rd        | Front-door write and front-door read         |
 
 
-# How to Run Simulation 
+## How to Run Simulation 
 
-## ModelSim / QuestaSim 
+### ModelSim / QuestaSim 
 
 vlib work                 
 vlog memory.v top.v                   
 vsim top +test=test_write_read                  
 add wave -position insertpoint sim:/top/dut/*           
 run -all 
+
 
 
 
