@@ -106,12 +106,12 @@ Testcases are selected dynamically using **plusargs**, enabling flexible simulat
 
 ## ModelSim / QuestaSim 
 
-vlib work
+vlib work                 
+vlog memory.v top.v                   
+vsim top +test=test_write_read                  
+add wave -position insertpoint sim:/top/dut/*           
+run -all 
 
-vlog memory.v top.v
-vsim top +test=test_write_read
-add wave -position insertpoint sim:/top/dut/*
-run -all
 
 
 
