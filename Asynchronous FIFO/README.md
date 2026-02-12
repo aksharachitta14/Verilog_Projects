@@ -94,7 +94,9 @@ Test cases are selected using the plusarg:
 - test_concurrent
 
 ### Simulation Steps
-vlib work
-vlog asyn_fifo.v top.v
-vsim top +test=test_concurrent
+vlib work 
+vlog asyn_fifo.v top.v 
+vsim top +test=test_concurrent. 
 run -all
+
+
